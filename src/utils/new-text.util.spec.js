@@ -12,7 +12,7 @@ const story = {
   url: 'http://joeyh.name/blog/entry/usb_drives_with_no_phantom_load/',
 };
 
-expect('new text util', () => {
+describe('new text util', () => {
   it('should have a function for building the sub-title', () => {
     expect(buildSubtitle(story)).toBe('By Rodrigo');
   });
