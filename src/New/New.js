@@ -3,6 +3,9 @@ import './New.css';
 
 class New extends Component {
   render() {
+    const {story} = this.props;
+    console.log('story', story);
+
     return (
       <div className="new d-flex">
         <div className="d-flex flex-column ai-center px-1">

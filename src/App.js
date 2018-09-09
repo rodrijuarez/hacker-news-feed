@@ -22,8 +22,6 @@ class App extends Component {
       .then(fetchURLs)
       .then(resultsToJSON)
       .then(stories => this.setState({stories}));
-
-    //this.setState({stories});
   }
 
   render() {
@@ -31,7 +29,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         {stories.map(story => (
-          <New />
+          <New story={story} key={story.id} />
         ))}
       </div>
     );
