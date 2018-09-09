@@ -9,3 +9,5 @@ export const buildSubtitle = R.compose(
   R.concat('By '),
   R.prop('by'),
 );
+
+export const buildTitle = R.prop('title');

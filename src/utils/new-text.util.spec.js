@@ -1,4 +1,4 @@
-import {buildSubtitle} from './new-text.util';
+import {buildSubtitle, buildTitle} from './new-text.util';
 
 const story = {
   by: 'rodrigo',
@@ -15,5 +15,9 @@ const story = {
 describe('new text util', () => {
   it('should have a function for building the sub-title', () => {
     expect(buildSubtitle(story)).toBe('By rodrigo');
+  });
+
+  it('should have a function for building the title', () => {
+    expect(buildTitle(story)).toBe(story.title);
   });
 });
