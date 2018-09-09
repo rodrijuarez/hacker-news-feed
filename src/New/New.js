@@ -5,10 +5,12 @@ import {buildTitle, buildSubtitle, buildScore} from '../utils/new-text.util';
 
 class New extends Component {
   render() {
-    const {story, onClick} = this.props;
+    const {story, onClick, isActive} = this.props;
 
     return (
-      <div className="new d-flex" onClick={() => onClick(story)}>
+      <div
+        className={isActive ? 'new d-flex active' : 'new d-flex'}
+        onClick={() => onClick(story)}>
         <div className="d-flex flex-column ai-center px-1">
           <i className="arrow-up" />
           <p className="text-small mt-0">{buildScore(story)}</p>
