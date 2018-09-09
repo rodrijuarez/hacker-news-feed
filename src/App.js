@@ -5,7 +5,7 @@ import './App.css';
 
 import New from './New/New';
 import {createElementURL, fetchURLs, resultsToJSON} from './utils/http.util';
-import {toggleStories} from './utils/active-stories.util';
+import {toggleStories, isActiveStory} from './utils/active-stories.util';
 
 class App extends Component {
   constructor() {

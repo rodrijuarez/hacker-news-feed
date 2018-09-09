@@ -1,4 +1,4 @@
-import {toggleStories} from './active-stories.util';
+import {toggleStories, isActiveStory} from './active-stories.util';
 
 const story = {
   by: 'rodrigo',
