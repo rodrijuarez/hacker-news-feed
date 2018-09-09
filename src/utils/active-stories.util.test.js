@@ -1,3 +1,5 @@
+import {toggleStories} from './active-stories.util';
+
 const story = {
   by: 'rodrigo',
   descendants: 10,
@@ -11,9 +13,9 @@ const story = {
 };
 
 it('should be able to toggle active stories into inactive', () => {
-  expect(toggleStory([story], story)).toBe([]);
+  expect(toggleStories([story], [story])).toEqual([]);
 });
 
 it('should be able to toggle active stories into inactive', () => {
-  expect(toggleStory([], story)).toBe([story]);
+  expect(toggleStories([], [story])).toEqual([story]);
 });
