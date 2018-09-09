@@ -1,24 +1,48 @@
 import React, {Component} from 'react';
+import * as R from 'ramda';
+
 import './App.css';
 
-import New from './New/New'
+import New from './New/New';
+import {createElementURL} from './utils/hacker-news-url';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {stories: []};
+  }
+
+  async componentDidMount() {
+    const takeTen = R.take(20);
+
+    const fetchURLs = R.compose(
+      Promise.all.bind(Promise),
+      R.map(fetch),
+    );
+
+    const resultsToJSON = R.compose(
+      Promise.all.bind(Promise),
+      R.map(i => i.json()),
+    );
+
+    fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+      .then(a => a.json())
+      .then(takeTen)
+      .then(R.map(createElementURL))
+      .then(fetchURLs)
+      .then(resultsToJSON)
+      .then(stories => this.setState({stories}));
+
+    //this.setState({stories});
+  }
+
   render() {
+    const {stories} = this.state;
     return (
       <div className="wrapper">
-        <New></New>
-        <div className="new">2</div>
-        <div className="new">3</div>
-        <div className="new">4</div>
-        <div className="new">5</div>
-        <div className="new">6</div>
-        <div className="new">7</div>
-        <div className="new">8</div>
-        <div className="new active">9</div>
-        <div className="new">10</div>
-        <div className="new">11</div>
-        <div className="new">12</div>
+        {stories.map(story => (
+          <New />
+        ))}
       </div>
     );
   }

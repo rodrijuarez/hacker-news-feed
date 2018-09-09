@@ -5,7 +5,7 @@ class New extends Component {
   render() {
     return (
       <div className="new d-flex">
-        <div class="d-flex flex-column ai-center px-1">
+        <div className="d-flex flex-column ai-center px-1">
           <i className="arrow-up" />
           <p className="text-small mt-0">10</p>
         </div>
