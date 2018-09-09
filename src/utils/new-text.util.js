@@ -7,6 +7,5 @@ const upperCaseFirstLetter = R.compose(
 
 export const buildSubtitle = R.compose(
   R.concat('By '),
-  upperCaseFirstLetter,
   R.prop('by'),
 );
