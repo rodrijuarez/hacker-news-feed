@@ -1,0 +1,19 @@
+.new {
+  background-color: #f6f6ef;
+  color: #000000;
+  padding: 0.5rem;
+}
+
+.active {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #fc6621;
+}
+
+.arrow-up {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  background-size: 1rem 1rem;
+  background-image: url('/arrow-up.svg'), none;
+}
