@@ -1,4 +1,4 @@
-import {buildSubtitle, buildTitle} from './new-text.util';
+import {buildSubtitle, buildTitle, buildScore} from './new-text.util';
 
 const story = {
   by: 'rodrigo',
@@ -19,5 +19,11 @@ describe('new text util', () => {
 
   it('should have a function for building the title', () => {
     expect(buildTitle(story)).toBe(story.title);
+  });
+
+  it('should have a function for building the score', () => {
+    expect(buildScore({score: undefined})).toBe(0);
+
+    expect(buildScore(story)).toBe(story.score);
   });
 });
