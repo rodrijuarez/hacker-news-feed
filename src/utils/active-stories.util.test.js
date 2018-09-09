@@ -35,3 +35,11 @@ it('should be able to toggle active stories into inactive', () => {
 it('should not toggle all the stories, only the ones received in the second param', () => {
   expect(toggleStories([story, storyTwo], [story])).toEqual([storyTwo]);
 });
+
+it('should be able to find active stories', () => {
+  expect(isActiveStory([story], story)).toEqual(true);
+});
+
+it('should be able to find inactive stories', () => {
+  expect(isActiveStory([storyTwo], story)).toEqual(false);
+});

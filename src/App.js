@@ -5,6 +5,7 @@ import './App.css';
 
 import New from './New/New';
 import {createElementURL, fetchURLs, resultsToJSON} from './utils/http.util';
+import {toggleStories} from './utils/active-stories.util';
 
 class App extends Component {
   constructor() {
@@ -25,7 +26,13 @@ class App extends Component {
   }
 
   toggleStory(story) {
-    console.log('story', story);
+    const activeStories = toggleStories(this.state.activeStories, [story]);
+
+    this.setState({activeStories});
+  }
+
+  isActiveStory(story) {
+    return isActiveStory(this.state.activeStories, story);
   }
 
   render() {
@@ -36,6 +43,7 @@ class App extends Component {
           <New
             story={story}
             key={story.id}
+            isActive={this.isActiveStory(story)}
             onClick={this.toggleStory.bind(this)}
           />
         ))}
