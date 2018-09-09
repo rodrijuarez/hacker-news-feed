@@ -4,7 +4,7 @@ import * as R from 'ramda';
 import './App.css';
 
 import New from './New/New';
-import {createElementURL} from './utils/hacker-news-url';
+import {createElementURL, fetchURLs, resultsToJSON} from './utils/http.util';
 
 class App extends Component {
   constructor() {
@@ -14,16 +14,6 @@ class App extends Component {
 
   async componentDidMount() {
     const takeTen = R.take(20);
-
-    const fetchURLs = R.compose(
-      Promise.all.bind(Promise),
-      R.map(fetch),
-    );
-
-    const resultsToJSON = R.compose(
-      Promise.all.bind(Promise),
-      R.map(i => i.json()),
-    );
 
     fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
       .then(a => a.json())
