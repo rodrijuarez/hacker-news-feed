@@ -24,12 +24,20 @@ class App extends Component {
       .then(stories => this.setState({stories}));
   }
 
+  toggleStory(story) {
+    console.log('story', story);
+  }
+
   render() {
     const {stories} = this.state;
     return (
       <div className="wrapper">
         {stories.map(story => (
-          <New story={story} key={story.id} />
+          <New
+            story={story}
+            key={story.id}
+            onClick={this.toggleStory.bind(this)}
+          />
         ))}
       </div>
     );
