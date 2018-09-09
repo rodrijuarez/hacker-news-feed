@@ -2,32 +2,32 @@
   text-align: center;
 }
 
-.box {
-  background-color: #fc6621;
+.new {
+  background-color: #F6F6EF;
   color: #000000;
-  border-radius: 5px;
   padding: 0.5rem;
 }
 
 .wrapper {
   width: 600px;
   display: grid;
-  grid-template-columns: repeat(6, 150px);
+  grid-template-columns: repeat(7, 150px);
   grid-template-rows: 150px;
   grid-auto-columns: 150px;
   grid-auto-rows: 150px;
   grid-gap: 10px;
 }
 
-.box2 {
+.active {
   grid-column: span 2;
   grid-row: span 2;
+  background-color: #fc6621;
 }
 
-.d-flex {
-  display: flex;
-}
-
-.text-small {
-  font-size: 0.5rem;
+.arrow-up {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  background-size: 1rem 1rem;
+  background-image: url('/arrow-up.svg'), none;
 }

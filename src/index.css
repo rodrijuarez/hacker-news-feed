@@ -3,3 +3,41 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.text-small {
+  font-size: 0.5rem;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-light {
+  font-weight: lighter;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
