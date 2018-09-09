@@ -14,6 +14,6 @@ const story = {
 
 describe('new text util', () => {
   it('should have a function for building the sub-title', () => {
-    expect(buildSubtitle(story)).toBe('By Rodrigo');
+    expect(buildSubtitle(story)).toBe('By rodrigo');
   });
 });
