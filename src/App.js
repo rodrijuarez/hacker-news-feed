@@ -9,7 +9,7 @@ import {createElementURL, fetchURLs, resultsToJSON} from './utils/http.util';
 class App extends Component {
   constructor() {
     super();
-    this.state = {stories: []};
+    this.state = {stories: [], activeStories: []};
   }
 
   async componentDidMount() {
